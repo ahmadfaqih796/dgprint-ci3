@@ -10,7 +10,7 @@
 		</ol>
 	</header>
 	<div class="row">
-		<?= form_open('brosur' , array('enctype' => 'multipart/form-data')) ?>
+		<?= form_open('brosur', array('enctype' => 'multipart/form-data')) ?>
 		<div class="col-md-5">
 			<h4>Upload Gambar</h4>
 			<div class="product-page-product-wrap">
@@ -28,10 +28,10 @@
 							<label for="">Ukuran Kertas :</label>
 							<div class="row">
 								<div class="col-md-6">
-									<input type="radio" name="ukuran" required value="A4">	A4 <br>
+									<input type="radio" name="ukuran" required value="A4"> A4 <br>
 								</div>
 								<div class="col-md-6">
-									<input type="radio" name="ukuran" required value="A5">	A5 <br>
+									<input type="radio" name="ukuran" required value="A5"> A5 <br>
 								</div>
 							</div>
 						</div>
@@ -44,8 +44,7 @@
 						</div>
 						<div class="form-group">
 							<label for="">Jumlah (rim) :</label>
-							<input type="number" name="jumlah" class="form-control" id="jumlah" onkeyup="showTotalBrosur()"
-								   required autocomplete="off">
+							<input type="number" name="jumlah" class="form-control" id="jumlah" onkeyup="showTotalBrosur()" required autocomplete="off">
 						</div>
 						<div class="form-group">
 							<label for="">Estimasi Waktu (hari) :</label>
@@ -64,12 +63,13 @@
 				<div class="col-md-4">
 					<div class="box-highlight">
 						<h4>Total</h4>
-						<div id="total"><h3>0</h3></div>
-						<button type="submit" class="btn btn-block btn-primary" name="keranjang"><i
-								class="fa fa-shopping-cart"></i>Add to cart
+						<div id="total">
+							<h3>0</h3>
+						</div>
+						<button type="submit" class="btn btn-block btn-primary" name="keranjang"><i class="fa fa-shopping-cart"></i>Add to cart
 						</button>
 						<?= form_close() ?>
-						<div class="product-page-side-section">
+						<!-- <div class="product-page-side-section">
 							<h5 class="product-page-side-title">Share This Item</h5>
 							<ul class="product-page-share-item">
 								<li>
@@ -98,7 +98,7 @@
 							<p class="product-page-side-text">* Except remote areas</p>
 							<p class="product-page-side-text">You have one month from the shipping confirmation
 								email.</p>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>

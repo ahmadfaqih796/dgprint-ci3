@@ -1,0 +1,3 @@
+dgprint = sipesan (folder)
+
+db_dgprint = db_sipesan (database)

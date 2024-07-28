@@ -15,7 +15,7 @@ class HomeController extends CI_Controller
 			'title' => 'Anugrah Sejahtera'
 		);
 		$this->load->view('frontend/templates/header_home', $data);
-		$this->load->view('frontend/index');
-		$this->load->view('frontend/templates/footer');
+		$this->load->view('frontend/home');
+		$this->load->view('frontend/templates/footer_home');
 	}
 }

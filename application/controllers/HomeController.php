@@ -11,11 +11,19 @@ class HomeController extends CI_Controller
 
 	public function index()
 	{
+		$session = $this->session->userdata('session_username');
 		$data = array(
 			'title' => 'Anugrah Sejahtera'
 		);
-		$this->load->view('frontend/templates/header_home', $data);
-		$this->load->view('frontend/home');
-		$this->load->view('frontend/templates/footer_home');
+
+		if ($session) {
+			$this->load->view('frontend/templates/header', $data);
+			$this->load->view('frontend/index');
+			$this->load->view('frontend/templates/footer');
+		} else {
+			$this->load->view('frontend/templates/header_home', $data);
+			$this->load->view('frontend/home');
+			$this->load->view('frontend/templates/footer_home');
+		}
 	}
 }

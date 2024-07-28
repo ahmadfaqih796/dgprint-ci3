@@ -19,16 +19,23 @@ class BayarController extends CI_Controller
 	public function keranjang()
 	{
 		$keranjang = $this->BayarModel->lihat_keranjang_status($this->session->userdata('session_id'), 'belum')->row_array();
+		// print_r($keranjang);
 		$data = array(
-			'keranjang' => $keranjang,
-			'spanduk' => $this->BayarModel->lihat_keranjang_spanduk($this->session->userdata('session_id'), 'belum', $keranjang['keranjang_id'])->result_array(),
-			'stiker' => $this->BayarModel->lihat_keranjang_stiker($this->session->userdata('session_id'), 'belum', $keranjang['keranjang_id'])->result_array(),
-			'kartu' => $this->BayarModel->lihat_keranjang_kartu($this->session->userdata('session_id'), 'belum', $keranjang['keranjang_id'])->result_array(),
-			'brosur' => $this->BayarModel->lihat_keranjang_brosur($this->session->userdata('session_id'), 'belum', $keranjang['keranjang_id'])->result_array(),
 			'title' => 'Keranjang | Surya Madani Digital Printing'
 		);
 		$this->load->view('frontend/templates/header', $data);
-		$this->load->view('frontend/pembayaran/keranjang', $data);
+		if ($keranjang) {
+			$data = array(
+				'keranjang' => $keranjang,
+				'spanduk' => $this->BayarModel->lihat_keranjang_spanduk($this->session->userdata('session_id'), 'belum', $keranjang['keranjang_id'])->result_array(),
+				'stiker' => $this->BayarModel->lihat_keranjang_stiker($this->session->userdata('session_id'), 'belum', $keranjang['keranjang_id'])->result_array(),
+				'kartu' => $this->BayarModel->lihat_keranjang_kartu($this->session->userdata('session_id'), 'belum', $keranjang['keranjang_id'])->result_array(),
+				'brosur' => $this->BayarModel->lihat_keranjang_brosur($this->session->userdata('session_id'), 'belum', $keranjang['keranjang_id'])->result_array(),
+			);
+			$this->load->view('frontend/pembayaran/keranjang', $data);
+		} else {
+			$this->load->view('frontend/pembayaran/keranjang_kosong', $data);
+		}
 		$this->load->view('frontend/templates/footer');
 	}
 	public function bayar($id)

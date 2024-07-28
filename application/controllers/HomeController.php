@@ -14,7 +14,7 @@ class HomeController extends CI_Controller
 		$data = array(
 			'title' => 'Anugrah Sejahtera'
 		);
-		$this->load->view('frontend/templates/header', $data);
+		$this->load->view('frontend/templates/header_home', $data);
 		$this->load->view('frontend/index');
 		$this->load->view('frontend/templates/footer');
 	}

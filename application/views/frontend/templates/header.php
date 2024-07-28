@@ -200,7 +200,7 @@
 					</form>
 					<ul class="nav navbar-nav navbar-right">
 						<?php if ($this->session->userdata('session_level') == null) : ?>
-							<li><a href="<?= base_url('admin') ?>">Login Admin</a></li>
+							<!-- <li><a href="<?= base_url('admin') ?>">Login Admin</a></li> -->
 							<li><a href="#nav-login-dialog" data-effect="mfp-move-from-top" class="popup-text">Login</a></li>
 							<li><a href="#nav-account-dialog" data-effect="mfp-move-from-top" class="popup-text">Buat Akun</a></li>
 						<?php else : ?>
